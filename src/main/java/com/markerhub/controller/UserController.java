@@ -1,6 +1,7 @@
 package com.markerhub.controller;
 
 
+import com.markerhub.common.lang.Result;
 import com.markerhub.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -24,7 +25,8 @@ public class UserController {
     UserService userService;
     @GetMapping("/{id}")
     public Object test(@PathVariable("id") Long id) {
-        return userService.getById(id);
+//        return userService.getById(id);
+        return Result.succ(userService.getById(id));
     }
 
 }
